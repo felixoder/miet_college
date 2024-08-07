@@ -1,11 +1,35 @@
 "use client";
-import Link from 'next/link';
 import React, { useState } from 'react';
+import Link from 'next/link';
+
+type DropdownItems = {
+  [key: string]: string[];
+};
 
 type Props = {};
 
 const Navbar = (props: Props) => {
+  const [openDropdown, setOpenDropdown] = useState<string | null>(null);
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
+
+  const handleDropdownToggle = (dropdown: string) => {
+    setOpenDropdown(openDropdown === dropdown ? null : dropdown);
+  };
+
+  // Define dropdown items with type
+  const dropdownItems: DropdownItems = {
+    'Admission 2024': ['Apply Now', 'Admission Requirements', 'Contact Admissions'],
+    'About-Us': ['Our History', 'Mission & Vision', 'Meet the Team'],
+    'Courses Offered': ['B.Tech', 'Diploma', 'Certifications'],
+    'MIET Campus': ['Campus Tour', 'Facilities', 'Location'],
+    'Student Facilities': ['Library', 'Hostel', 'Sports'],
+    'Schemes': ['Scholarships', 'Financial Aid', 'Discounts'],
+    'Training & Placement': ['Internships', 'Job Placements', 'Career Counseling'],
+    'Media': ['News', 'Press Releases', 'Events'],
+    'Activities': ['Cultural Events', 'Sports Events', 'Workshops'],
+    'News': ['Latest Updates', 'Announcements', 'Articles'],
+    'Our Campus': ['Campus Life', 'Student Testimonials', 'Virtual Tour']
+  };
 
   return (
     <nav className='top-0 sticky z-999'>
@@ -101,42 +125,27 @@ const Navbar = (props: Props) => {
 
       {/* Third Part for Larger Devices */}
       <div className="hidden lg:flex justify-center gap-3 items-center h-[50px] bg-formal_red text-white font-bold">
-        <Link href='/' className='flex justify-center items-center gap-2'>Admission 2024
-          <img src="./down_arrow.svg" className='h-[13px] w[13px]' alt="" />
-        </Link>
-        <Link href='/' className='flex justify-center items-center gap-2'>About-Us
-          <img src="./down_arrow.svg" className='h-[13px] w[13px]' alt="" />
-        </Link>
-        <Link href='/' className='flex justify-center items-center gap-2'>Courses Offered
-          <img src="./down_arrow.svg" className='h-[13px] w[13px]' alt="" />
-        </Link>
-        <Link href='/' className='flex justify-center items-center gap-2'>MIET Campus
-          <img src="./down_arrow.svg" className='h-[13px] w[13px]' alt="" />
-        </Link>
-        <Link href='/' className='flex justify-center items-center gap-2'>Student Facilities
-          <img src="./down_arrow.svg" className='h-[13px] w[13px]' alt="" />
-        </Link>
-        <Link href='/' className='flex justify-center items-center gap-2'>Schemes
-          <img src="./down_arrow.svg" className='h-[13px] w[13px]' alt="" />
-        </Link>
-        <Link href='/' className='flex justify-center items-center gap-2'>Training & Placement
-          <img src="./down_arrow.svg" className='h-[13px] w[13px]' alt="" />
-        </Link>
-        <Link href='/' className='flex justify-center items-center gap-2'>Media
-          <img src="./down_arrow.svg" className='h-[13px] w[13px]' alt="" />
-        </Link>
-        <Link href='/' className='flex justify-center items-center gap-2'>Activities
-          <img src="./down_arrow.svg" className='h-[13px] w[13px]' alt="" />
-        </Link>
-        <Link href='/' className='flex justify-center items-center gap-2'>News
-          <img src="./down_arrow.svg" className='h-[13px] w[13px]' alt="" />
-        </Link>
-        <Link href='/' className='flex justify-center items-center gap-2'>Our Campus
-          <img src="./down_arrow.svg" className='h-[13px] w[13px]' alt="" />
-        </Link>
+        {Object.keys(dropdownItems).map((item) => (
+          <div key={item} className="relative group">
+            <button 
+              onClick={() => handleDropdownToggle(item)}
+              className="flex items-center gap-2"
+            >
+              {item}
+              <img src="./down_arrow.svg" className='h-[13px] w-[13px]' alt="down arrow" />
+            </button>
+            {openDropdown === item && (
+              <div className="absolute bg-white text-black mt-2 rounded-md shadow-lg w-48">
+                {dropdownItems[item].map((submenuItem, index) => (
+                  <Link key={index} href="#" className="block px-4 py-2 hover:bg-gray-200">{submenuItem}</Link>
+                ))}
+              </div>
+            )}
+          </div>
+        ))}
       </div>
     </nav>
   );
-}
+};
 
 export default Navbar;
