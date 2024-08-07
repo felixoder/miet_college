@@ -76,11 +76,11 @@ const Navbar = (props: Props) => {
           </button>
           <div className="flex justify-center md:gap-2">
             <div className="flex flex-col md:mr-2 md:ml-2 mt-1">
-              <h1 className='text-sm md:font-bold font-sm'>Admission Only</h1>
+              <h1 className='text-sm md:font-bold font-sm'>Admission</h1>
               <h1 className='font-bold text-formal_red md:text-xl text-sm'>918336070583</h1>
             </div>
             <div className="mr-2 ml-2">
-              <h1 className='text-sm md:font-bold font-sm'>Other Queries</h1>
+              <h1 className='text-sm md:font-bold font-sm mt-1'>Other Queries</h1>
               <h1 className='font-bold text-formal_red md:text-xl text-sm'>918336070583</h1>
             </div>
             <div className="bg-yellow-400 rounded-bl-[4rem] w-[200px] lg:flex justify-center items-center ml-2 hidden">
