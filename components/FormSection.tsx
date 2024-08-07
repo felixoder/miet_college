@@ -15,7 +15,7 @@ const FormSection = (props: Props) => {
 
       {/* Form */}
       <form className="flex flex-col gap-6 w-full max-w-4xl px-4">
-        <h1 className="text-formal_red font-bold lg:text-3xl text-xl mb-5 ">
+        <h1 className="text-formal_red font-bold text-3xl mb-5 mt-3">
           Quick Enquiry For Admission
         </h1>
 
