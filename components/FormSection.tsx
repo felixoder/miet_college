@@ -23,7 +23,7 @@ const FormSection = (props: Props) => {
           <div className="relative">
             <label
               htmlFor="name"
-              className="absolute p-2 top-1 left-3 text-black transition-all duration-300 transform -translate-y-1 scale-75 origin-top-left bg-white z-10 text-xl"
+              className="absolute p-2 -top-2 left-3 text-black transition-all duration-300 transform -translate-y-1 scale-75 origin-top-left bg-white z-10 text-xl"
             >
               Name
             </label>
@@ -38,7 +38,7 @@ const FormSection = (props: Props) => {
           <div className="relative">
             <label
               htmlFor="mobile_number"
-              className="absolute p-2 top-1 left-3 text-black transition-all duration-300 transform -translate-y-1 scale-75 origin-top-left bg-white z-10 text-xl"
+              className="absolute p-2 -top-2 left-3 text-black transition-all duration-300 transform -translate-y-1 scale-75 origin-top-left bg-white z-10 text-xl"
             >
               Mobile Number
             </label>
@@ -53,7 +53,7 @@ const FormSection = (props: Props) => {
           <div className="relative">
             <label
               htmlFor="course"
-              className="absolute p-2 top-1 left-3 text-black transition-all duration-300 transform -translate-y-1 scale-75 origin-top-left bg-white z-10 text-xl"
+              className="absolute p-2 -top-2 left-3 text-black transition-all duration-300 transform -translate-y-1 scale-75 origin-top-left bg-white z-10 text-xl"
             >
               Select Interested Course
             </label>
@@ -68,7 +68,7 @@ const FormSection = (props: Props) => {
           <div className="relative">
             <label
               htmlFor="location"
-              className="absolute p-2 top-1 left-3 text-black transition-all duration-300 transform -translate-y-1 scale-75 origin-top-left bg-white z-10 text-xl"
+              className="absolute p-2 -top-2 left-3 text-black transition-all duration-300 transform -translate-y-1 scale-75 origin-top-left bg-white z-10 text-xl"
             >
               Location
             </label>
@@ -83,7 +83,7 @@ const FormSection = (props: Props) => {
           <div className="relative">
             <label
               htmlFor="message"
-              className="absolute p-2 top-1 left-3 text-black transition-all duration-300 transform -translate-y-1 scale-75 origin-top-left bg-white z-10 text-xl"
+              className="absolute p-2 -top-2 left-3 text-black transition-all duration-300 transform -translate-y-1 scale-75 origin-top-left bg-white z-10 text-xl"
             >
               Message
             </label>
